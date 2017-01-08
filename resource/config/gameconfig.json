@@ -1,0 +1,55 @@
+{
+    "tasks": [
+        {
+            "id": "0",
+            "name": "和艾基尔对话",
+            "type":"dialog",
+            "status": 0,
+            "desc": "点击右上方的莉兹，和艾基尔商量有关龙血药剂的事情",
+            "fromNpcId": "npc_0",
+            "toNpcId": "npc_0",
+            "current": 0,
+            "total": 10,
+            "nextTaskId":"1"
+        },
+        {
+            "id": "1",
+            "name": "干掉怪物",
+            "type":"killMonster",
+            "status": 0,
+            "desc": "点下面那货",
+            "fromNpcId": "npc_1",
+            "toNpcId": "npc_1",
+            "current": 0,
+            "total": 10,
+            "nextTaskId":null
+        }
+    ],
+    "npcs": [
+        {
+            "id": "npc_0",
+            "name": "莉兹贝特",
+            "bitmap": "npc_0_png",
+            "emoji": 0,
+            "tachie": "npc_0_tachie_jpg",
+            "x": 475,
+            "y": 125
+        },
+        {
+            "id": "npc_1",
+            "name": "艾基尔",
+            "bitmap": "npc_1_png",
+            "emoji": 0,
+            "tachie": "npc_1_tachie_jpg",
+            "x": 25,
+            "y": 225
+        }
+    ],
+    "monsters":[
+        {
+            "id":"0",
+            "linkTaskId":"1",
+            "image":"monster_jpg"
+        }
+    ]
+}
