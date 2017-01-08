@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,chara1_png,chara2_png,chara3_png,1_png,2_png,3_png,empty_png,exclamation_jpg,npc_0_png,npc_1_png,question_jpg,gameconfig_json,dialog_png,monster_jpg,npc_0_tachie_png,npc_1_tachie_png,dialogue_json,button_jpg,hero_0_jpg,jewel_0_jpg,weapon_0_jpg,bg2_jpg",
+			"keys": "bg_jpg,egret_icon_png,description_json,chara1_png,chara2_png,chara3_png,1_png,2_png,3_png,empty_png,npc_0_png,npc_1_png,gameconfig_json,dialog_png,monster_jpg,npc_0_tachie_png,npc_1_tachie_png,dialogue_json,button_jpg,hero_0_jpg,jewel_0_jpg,weapon_0_jpg,bg2_jpg,map_png,exclamation_png,question_png",
 			"name": "preload"
 		}
 	],
@@ -57,11 +57,6 @@
 			"url": "assets/empty.png"
 		},
 		{
-			"name": "exclamation_jpg",
-			"type": "image",
-			"url": "assets/exclamation.jpg"
-		},
-		{
 			"name": "npc_0_png",
 			"type": "image",
 			"url": "assets/npc_0.png"
@@ -70,11 +65,6 @@
 			"name": "npc_1_png",
 			"type": "image",
 			"url": "assets/npc_1.png"
-		},
-		{
-			"name": "question_jpg",
-			"type": "image",
-			"url": "assets/question.jpg"
 		},
 		{
 			"name": "gameconfig_json",
@@ -130,6 +120,21 @@
 			"name": "bg2_jpg",
 			"type": "image",
 			"url": "assets/bg2.jpg"
+		},
+		{
+			"name": "map_png",
+			"type": "image",
+			"url": "assets/map.png"
+		},
+		{
+			"name": "exclamation_png",
+			"type": "image",
+			"url": "assets/exclamation.png"
+		},
+		{
+			"name": "question_png",
+			"type": "image",
+			"url": "assets/question.png"
 		}
 	]
 }

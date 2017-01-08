@@ -2,10 +2,10 @@
     "tasks": [
         {
             "id": "0",
-            "name": "和艾基尔对话",
+            "name": "被抢走的武器",
             "type":"dialog",
             "status": 0,
-            "desc": "点击右上方的莉兹，和艾基尔商量有关龙血药剂的事情",
+            "desc": "莉兹贝特好像有什么事情想和你商量，去找她聊聊吧。",
             "fromNpcId": "npc_0",
             "toNpcId": "npc_0",
             "current": 0,
@@ -14,10 +14,10 @@
         },
         {
             "id": "1",
-            "name": "干掉怪物",
+            "name": "夺回传说级武器",
             "type":"killMonster",
             "status": 0,
-            "desc": "点下面那货",
+            "desc": "杀死狼人，得到其身上掉落的武器，向艾基尔汇报。",
             "fromNpcId": "npc_1",
             "toNpcId": "npc_1",
             "current": 0,

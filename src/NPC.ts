@@ -78,10 +78,10 @@ class NPC extends egret.DisplayObjectContainer implements Observer {
                 this._emoji.texture = RES.getRes("empty_png");
                 break;
             case EmojiStatus.QUESTION:
-                this._emoji.texture = RES.getRes("question_jpg");
+                this._emoji.texture = RES.getRes("question_png");
                 break;
             case EmojiStatus.EXCLAMATION:
-                this._emoji.texture = RES.getRes("exclamation_jpg");
+                this._emoji.texture = RES.getRes("exclamation_png");
                 break;
             default:
                 break;

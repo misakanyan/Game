@@ -70,10 +70,10 @@ class Character extends egret.DisplayObjectContainer {
         if (this._ifmove) {
             console.log("move");
             if (targetX > this._body.x) {
-                this._body.skewY = 180;
+                this._body.skewY = 0;
             }
             else {
-                this._body.skewY = 0;
+                this._body.skewY = 180;
             }
             this.startMove();
 
