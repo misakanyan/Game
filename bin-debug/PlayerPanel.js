@@ -1,16 +1,17 @@
 var panelConfig = [
-    { name: "bg", image: "bg_jpg", x: 0, y: 0 },
+    { name: "bg", image: "panelBg_png", x: 0, y: 0 },
 ];
 var heroConfig = [
-    { name: "hero_0", image: "hero_0_jpg", x: 0, y: 0 }
+    { name: "hero_0", image: "hero_1_png", x: 0, y: 0 }
 ];
 var equipmentConfig = [
-    { name: WeaponConfig[0].name, image: WeaponConfig[0].image, x: 0, y: 150 }
+    { name: WeaponConfig[0].name, image: WeaponConfig[0].image, x: 0, y: 120 },
+    { name: WeaponConfig[1].name, image: WeaponConfig[1].image, x: 0, y: 120 },
+    { name: WeaponConfig[2].name, image: WeaponConfig[2].image, x: 0, y: 120 }
 ];
 var jewelConfig = [
     { name: JewelConfig[0].name, image: JewelConfig[0].image, x: 0, y: 200 }
 ];
-//目前状态：穿戴的武器显示不出来
 var PlayerPanel = (function (_super) {
     __extends(PlayerPanel, _super);
     function PlayerPanel(stage, player) {
@@ -72,12 +73,12 @@ var PlayerPanel = (function (_super) {
         this.hero.texture = RES.getRes(heroConfig[0].image);
         this.hero.x = heroConfig[0].x;
         this.hero.y = heroConfig[0].y;
-        this.hero.width = 100;
-        this.hero.height = 150;
+        //this.hero.width = 100;
+        //this.hero.height = 150;
         for (var i = 0; i < this.player.heroesInTeam.weapons.length; i++) {
-            this.weapon[i].texture = RES.getRes(equipmentConfig[0].image);
-            this.weapon[i].x = equipmentConfig[0].x;
-            this.weapon[i].y = equipmentConfig[0].y + i * 100;
+            this.weapon[i].texture = RES.getRes(equipmentConfig[i].image);
+            this.weapon[i].x = equipmentConfig[i].x + 10;
+            this.weapon[i].y = equipmentConfig[i].y + i * 60;
         }
         //for(var i = 0;i<this.jewel.length;i++){
         //    this.jewel[i].texture = RES.getRes(jewelConfig[0].image);
@@ -89,9 +90,9 @@ var PlayerPanel = (function (_super) {
                 + " \n稀有度：" + this.player.heroesInTeam.weapons[i].quality
                 + " \n攻击力：" + this.player.heroesInTeam.weapons[i].attack
                 + " \n战斗力：" + this.player.heroesInTeam.weapons[i].fightPower;
-            this.weapon_desc[i].x = equipmentConfig[0].x + this.weapon[i].width;
-            this.weapon_desc[i].y = equipmentConfig[0].y + i * 100;
-            this.weapon_desc[i].size = 16;
+            this.weapon_desc[i].x = this.weapon[i].x + this.weapon[i].width + 20;
+            this.weapon_desc[i].y = this.weapon[i].y;
+            this.weapon_desc[i].size = 12;
         }
         //for(var i = 0;i<this.jewel_desc.length;i++){
         //    this.jewel_desc[i].text = "宝石：" + this.Hero.weapons[0].jewels[0].name
@@ -104,12 +105,13 @@ var PlayerPanel = (function (_super) {
         //}
         this.hero_desc.text = "英雄：" + this.player.heroesInTeam.name
             + " \n等级：" + this.player.heroesInTeam.level
-            + " \n最大生命值：" + this.player.heroesInTeam.maxHp
+            + " \n生命值：" + this.player.heroesInTeam.maxHp
             + " \n攻击力：" + this.player.heroesInTeam.attack
             + " \n战斗力：" + this.player.heroesInTeam.fightPower;
         this.hero_desc.x = heroConfig[0].x + this.hero.width;
-        this.hero_desc.y = heroConfig[0].y;
-        this.hero_desc.size = 16;
+        this.hero_desc.y = heroConfig[0].y + 28;
+        this.hero_desc.fontFamily = "微软雅黑";
+        this.hero_desc.size = 13;
         //this.help.text = "点击查看武器和镶嵌的宝石信息";
         //this.help.x = equipmentConfig[0].x;
         //this.help.y = equipmentConfig[0].y - this.weapon[0].height;

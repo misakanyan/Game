@@ -93,7 +93,7 @@ class TalkCommand implements Command {
                 break;
             }else if(this.npc._taskList[i].status == TaskStatus.CAN_SUBMIT){
                 TaskService.getInstance().submit(this.npc._taskList[i].id);
-            }else if(this.npc._taskList[i].status == TaskStatus.UNACCEPTABLE){
+            }else if(this.npc._taskList[i].status == TaskStatus.CAN_ACCEPT){
                 TaskService.getInstance().activate(this.npc._taskList[i].id);
             }
         }

@@ -4,7 +4,7 @@
             "id": "0",
             "name": "被抢走的武器",
             "type":"dialog",
-            "status": 0,
+            "status": 5,
             "desc": "莉兹贝特好像有什么事情想和你商量，去找她聊聊吧。",
             "fromNpcId": "npc_0",
             "toNpcId": "npc_0",

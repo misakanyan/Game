@@ -191,6 +191,9 @@ class TaskService {
     for (var i: number = 0; i < NPCManager.getInstance().NPCList.length; i++) {
         this.observerList.push(NPCManager.getInstance().NPCList[i]);
     }
+    for(var i:number = 0;i<this.taskList.length;i++){
+        this.notify(this.taskList[i]);
+    }
 
     }
 
@@ -206,7 +209,7 @@ class TaskService {
 
     activate(id: string){
         let task = this.taskList[id];
-        if (task.status == TaskStatus.UNACCEPTABLE) {
+        if (task.status == TaskStatus.CAN_ACCEPT) {
             task.status = TaskStatus.ACCEPTABLE;
             console.log('activate task:' + id);
         }
@@ -305,7 +308,8 @@ enum TaskStatus {
     ACCEPTABLE,
     DURING,
     CAN_SUBMIT,
-    SUBMITTED
+    SUBMITTED,
+    CAN_ACCEPT
 
 }
 
@@ -587,11 +591,12 @@ class DialogPanel extends egret.DisplayObjectContainer {
 }
 
 var ChineseTaskStatus = {
-    0: "未接受",
+    0: "不可接受",
     1: "可接受",
     2: "进行中",
     3: "可提交",
-    4: "已提交"
+    4: "已提交",
+    5: "未接受"
 }
 
 

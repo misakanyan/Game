@@ -39,7 +39,7 @@ var SceneService = (function () {
             if (this.monsterList[i].id == id) {
                 this.monsterList[i].onSleep();
                 this.callback();
-                Bag.getInstance().addItemToBag("灰烬使者（双持）"); //掉落
+                Bag.getInstance().addItemToBag("血腥砍刀"); //掉落
             }
         }
     };

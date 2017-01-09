@@ -1,5 +1,5 @@
 var HeroConfig = [
-    { id: "0", name: "提里奥·弗丁", quality: 1, level: 5, strength: 10 }
+    { id: "0", name: "Kiriko", quality: 1, level: 5, strength: 10 }
 ];
 var HeroProperty = (function (_super) {
     __extends(HeroProperty, _super);

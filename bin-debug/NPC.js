@@ -26,15 +26,9 @@ var NPC = (function (_super) {
         this._tachie.anchorOffsetY = this._tachie.height / 2;
         this._emoji.anchorOffsetX = this._emoji.width / 2;
         this._emoji.anchorOffsetY = this._emoji.height / 2;
-        this._emoji.x = this._bitmap.x;
-        this._emoji.y = this._bitmap.y - (this._bitmap.height + this._emoji.height) / 2;
+        this._emoji.x = this._bitmap.x + this._bitmap.width / 2 - 5;
+        this._emoji.y = this._bitmap.y - (this._bitmap.height + this._emoji.height) / 4;
         this._taskList = TaskService.getInstance().getTaskByCustomRole(this.npcRule);
-        for (var i = 0; i < this._taskList.length; i++) {
-            if (this._taskList[i].fromNpcId == this._id) {
-                this.changeEmoji(EmojiStatus.EXCLAMATION);
-                break;
-            }
-        }
         this.addChild(this._bitmap);
         this.addChild(this._emoji);
         //this.addChild(this._tachie);
@@ -54,10 +48,10 @@ var NPC = (function (_super) {
                     //console.log("accept task fromNpcId:" + task.fromNpcId + " status:" + task.status);
                     //console.log("accept task fromNpcId:" + this._id + " status:" + TaskStatus.DURING);
                     this._taskList[i].status = task.status;
-                    if (task.fromNpcId == this._id && task.status == TaskStatus.DURING) {
+                    if (task.fromNpcId == this._id && task.status == TaskStatus.UNACCEPTABLE) {
                         this.changeEmoji(EmojiStatus.EMPTY);
                     }
-                    else if (task.toNpcId == this._id && task.status == TaskStatus.DURING) {
+                    else if (task.toNpcId == this._id && task.status == TaskStatus.DURING || task.status == TaskStatus.ACCEPTABLE || task.status == TaskStatus.CAN_ACCEPT) {
                         this.changeEmoji(EmojiStatus.QUESTION);
                     }
                     else if (task.toNpcId == this._id && task.status == TaskStatus.CAN_SUBMIT) {

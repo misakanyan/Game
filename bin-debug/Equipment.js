@@ -1,8 +1,7 @@
 var WeaponConfig = [
-    { id: "0", name: "灰烬使者", quality: 1, forge: 5, weight: 10, image: "weapon_0_jpg" },
-    { id: "1", name: "weapon_1", quality: 2, forge: 10, weight: 12, image: "weapon_1_jpg" },
-    { id: "2", name: "weapon_2", quality: 3, forge: 20, weight: 20, image: "weapon_2_jpg" },
-    { id: "3", name: "weapon_3", quality: 4, forge: 50, weight: 30, image: "weapon_3_jpg" }
+    { id: "0", name: "阐释者", quality: 2, forge: 6, weight: 12, image: "weapon_1_png" },
+    { id: "1", name: "永恒长枪", quality: 3, forge: 12, weight: 20, image: "weapon_2_png" },
+    { id: "2", name: "血腥砍刀", quality: 4, forge: 20, weight: 30, image: "weapon_3_png" }
 ];
 var WeaponProperty = (function (_super) {
     __extends(WeaponProperty, _super);

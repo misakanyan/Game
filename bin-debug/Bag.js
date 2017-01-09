@@ -12,7 +12,7 @@ var BagPanel = (function (_super) {
         this.addChild(this.bagBg);
         if (this.items.length > 0) {
             for (var i = 0; i < this.items.length; i++) {
-                this.items[i].text = "佛丁二号";
+                this.items[i].text = "血腥砍刀";
                 this.items[i].x = 0;
                 this.items[i].y = 300 + i * 20;
                 this.items[i].size = 14;
@@ -38,7 +38,7 @@ var Bag = (function (_super) {
         this.switch = new egret.TextField;
         this.isShow = false;
         this.bagBg = new egret.Bitmap;
-        this.items = [new egret.TextField];
+        this.items = [];
     }
     var d = __define,c=Bag,p=c.prototype;
     Bag.getInstance = function () {
@@ -65,7 +65,7 @@ var Bag = (function (_super) {
         this.switch.x = 450;
         this.switch.y = 487.5;
         this.addChild(this.switch);
-        this.bagBg.texture = RES.getRes("bg2_jpg");
+        this.bagBg.texture = RES.getRes("panelBg_png");
         this.bagBg.x = 0;
         this.bagBg.y = 300;
         this.bagBg.width = 200;
@@ -74,7 +74,7 @@ var Bag = (function (_super) {
         this.bagBg.visible = false;
         if (this.items.length > 0) {
             for (var i = 0; i < this.items.length; i++) {
-                this.items[i].text = "喵";
+                this.items[i].text = "";
                 this.items[i].x = 0;
                 this.items[i].y = 300 + i * 20;
                 this.items[i].size = 14;
@@ -92,13 +92,13 @@ var Bag = (function (_super) {
         this.player = new Player();
         //console.log("英雄数量："+this.player.heroes.length);
         this.hero = new Hero(0);
-        var Ashbringer = new Weapon(0);
-        var Ashbringer2 = new Weapon(0);
+        var weapon = new Weapon(0);
+        var weapon2 = new Weapon(1);
         //var Ruby = new Jewel(0);
         //Ashbringer.addJewel(Ruby);
-        this.hero.addWeapon(Ashbringer);
+        this.hero.addWeapon(weapon);
         //console.log("武器数量："+this.hero.weapons.length);
-        this.hero.addWeapon(Ashbringer2);
+        this.hero.addWeapon(weapon2);
         this.player.addHero(this.hero);
         this.playerPanel = new PlayerPanel(this.stage, this.player);
         //this.playerPanel.addWeapon();
@@ -137,15 +137,12 @@ var Bag = (function (_super) {
     };
     p.addItemToHero = function (e) {
         console.log("add");
-        if (e.target.text == "灰烬使者（双持）") {
+        if (e.target.text == "血腥砍刀") {
             console.log("addsuccess");
-            this.player.heroesInTeam.addWeapon(new Weapon(0));
+            this.player.heroesInTeam.addWeapon(new Weapon(2));
             this.playerPanel.updatePlayer(this.player);
             this.playerPanel.setPanel();
             e.target.text = null;
-        }
-        else {
-            console.log("弗丁只能装备灰烬使者");
         }
     };
     p.addItemToBag = function (item) {

@@ -141,6 +141,9 @@ var TaskService = (function () {
         for (var i = 0; i < NPCManager.getInstance().NPCList.length; i++) {
             this.observerList.push(NPCManager.getInstance().NPCList[i]);
         }
+        for (var i = 0; i < this.taskList.length; i++) {
+            this.notify(this.taskList[i]);
+        }
     };
     p.addObserver = function (o) {
         this.observerList.push(o);
@@ -152,7 +155,7 @@ var TaskService = (function () {
     };
     p.activate = function (id) {
         var task = this.taskList[id];
-        if (task.status == TaskStatus.UNACCEPTABLE) {
+        if (task.status == TaskStatus.CAN_ACCEPT) {
             task.status = TaskStatus.ACCEPTABLE;
             console.log('activate task:' + id);
         }
@@ -242,6 +245,7 @@ var TaskStatus;
     TaskStatus[TaskStatus["DURING"] = 2] = "DURING";
     TaskStatus[TaskStatus["CAN_SUBMIT"] = 3] = "CAN_SUBMIT";
     TaskStatus[TaskStatus["SUBMITTED"] = 4] = "SUBMITTED";
+    TaskStatus[TaskStatus["CAN_ACCEPT"] = 5] = "CAN_ACCEPT";
 })(TaskStatus || (TaskStatus = {}));
 var TaskTextElement = (function (_super) {
     __extends(TaskTextElement, _super);
@@ -494,10 +498,11 @@ var DialogPanel = (function (_super) {
 }(egret.DisplayObjectContainer));
 egret.registerClass(DialogPanel,'DialogPanel');
 var ChineseTaskStatus = {
-    0: "未接受",
+    0: "不可接受",
     1: "可接受",
     2: "进行中",
     3: "可提交",
-    4: "已提交"
+    4: "已提交",
+    5: "未接受"
 };
 //# sourceMappingURL=Task.js.map
